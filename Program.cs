@@ -87,11 +87,12 @@ public class Employees
     {
         Console.WriteLine("Введите ID");
         string id_remove = Console.ReadLine();
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < list.Count; i++)
         {
             if (list[i].Id == id_remove)
             {
                 list.Remove(list[i]);
+                Console.WriteLine("Рабочий удален");
             }
         }
     }
