@@ -55,6 +55,7 @@ public class Employees
         string pos = Console.ReadLine();
 
         Employee test = new Employee(name, ID_add, depar, pos);
+        
         return test;
     }
     
@@ -62,36 +63,38 @@ public class Employees
     {
         Console.WriteLine("Введите ID сотрудника");
         string write_id = Console.ReadLine();
-        foreach (Employee chel in _listEmployees)
+        Employee chel = FindEmployeeById(write_id);
+        if (chel != null)
         {
-            if (chel.Id == write_id)
-            {
-                Console.WriteLine("Введите имя");
-                string name = Console.ReadLine();
+            Console.WriteLine("Введите имя");
+            string name = Console.ReadLine();
 
-                Console.WriteLine("Введите департамент");
-                string depar = Console.ReadLine();
-                
-                Console.WriteLine("Введите должность");
-                string pos = Console.ReadLine();
+            Console.WriteLine("Введите департамент");
+            string depar = Console.ReadLine();
+            
+            Console.WriteLine("Введите должность");
+            string pos = Console.ReadLine();
 
-                chel.Name = name;
-                chel.Department = depar;
-                chel.Position = pos;
-                Console.WriteLine("Данные изменены");
-            }
+            chel.Name = name;
+            chel.Department = depar;
+            chel.Position = pos;
+            Console.WriteLine("Данные изменены");
+        }
+        else
+        {
+            Console.WriteLine("Нет такого ID");
         }
     }
     
-    public void RemoveEmployee(List<Employee> list)
+    public void RemoveEmployee()
     {
         Console.WriteLine("Введите ID");
         string id_remove = Console.ReadLine();
-        for (int i = 0; i < list.Count; i++)
+        for (int i = 0; i < _listEmployees.Count; i++)
         {
-            if (list[i].Id == id_remove)
+            if (_listEmployees[i].Id == id_remove)
             {
-                list.Remove(list[i]);
+                _listEmployees.Remove(_listEmployees[i]);
                 Console.WriteLine("Рабочий удален");
             }
         }
@@ -146,7 +149,7 @@ public class Program
                     emploeesList.UpdateEmployee();
                     break;
                 case "4":
-                    emploeesList.RemoveEmployee(employees);
+                    emploeesList.RemoveEmployee();
                     break;
                 case "0":
                     flag = false;

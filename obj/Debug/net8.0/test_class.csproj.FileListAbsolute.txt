@@ -12,3 +12,4 @@ C:\vs code\test_class\obj\Debug\net8.0\refint\test_class.dll
 C:\vs code\test_class\obj\Debug\net8.0\test_class.pdb
 C:\vs code\test_class\obj\Debug\net8.0\test_class.genruntimeconfig.cache
 C:\vs code\test_class\obj\Debug\net8.0\ref\test_class.dll
+C:\vs code\test_class\obj\Debug\net8.0\test_class.sourcelink.json
